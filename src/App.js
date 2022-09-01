@@ -11,10 +11,13 @@ import DashboardHome from './Pages/Dashboard/DashboardHome/DashboardHome';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import AddDoctor from './Pages/Dashboard/AddDoctor/AddDoctor';
 import AdminRoute from './Pages/Login/AdminRoute/AdminRoute';
+import PracticeClass from './PracticeClass';
+import Payment from './Pages/Dashboard/Payment/Payment';
 
 function App() {
   return (
     <div className="App">
+      {/* <PracticeClass /> */}
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -23,6 +26,7 @@ function App() {
             <Route path="appointment" element={<Appointment />} />
             <Route path="dashboard" element={<Dashboard />}>
               <Route path="" element={<DashboardHome />} />
+              <Route path="payment/:appointmentId" element={<Payment />} />
               <Route path="*" element={<AdminRoute />} >
                 <Route path="makeAdmin" element={<MakeAdmin />} />
                 <Route path="addDoctor" element={<AddDoctor />} />
